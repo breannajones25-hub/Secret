@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>YAY 💖</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+
+<style>
+body {
+  margin: 0;
+  font-family: 'Pacifico', cursive;
+  background: linear-gradient(135deg, #ff758c, #ff7eb3);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.card {
+  background: white;
+  padding: 35px 25px;
+  border-radius: 25px;
+  text-align: center;
+  width: 90%;
+  max-width: 360px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+  z-index: 2;
+}
+
+h1 {
+  color: #ff4d6d;
+  font-size: 1.7rem;
+}
+
+p {
+  font-size: 1.1rem;
+  margin-top: 15px;
+}
+
+.confetti {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: pink;
+  animation: fall 3s linear infinite;
+}
+
+@keyframes fall {
+  from { transform: translateY(-10vh); }
+  to { transform: translateY(110vh); }
+}
+</style>
+</head>
+
+<body>
+
+<audio autoplay loop>
+  <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<audio autoplay>
+  <source src="kiss.mp3" type="audio/mpeg">
+</audio>
+
+<div class="card">
+  <h1>I knew you’d say yes, babe! 💘</h1>
+  <p>You’re officially my Valentine now 😘</p>
+  <p>Can’t wait to spoil you, Macho 💕</p>
+  <p>Forever yours 💖</p>
+
+<p id="secret" style="display:none; margin-top:20px; color:#ff4d6d;">
+  P.S. You make my heart so happy. I love you, Macho 💖🐝
+</p>
+
+</div>
+
+<script>
+// confetti
+for (let i = 0; i < 60; i++) {
+  const confetti = document.createElement("div");
+  confetti.className = "confetti";
+  confetti.style.left = Math.random() * 100 + "vw";
+  confetti.style.background = ["#ff4d6d", "#ffd1dc", "#fff"][Math.floor(Math.random()*3)];
+  confetti.style.animationDuration = Math.random() * 2 + 2 + "s";
+  document.body.appendChild(confetti);
+}
+</script>
